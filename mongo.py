@@ -5,4 +5,4 @@ os.environ["MONGODB_URI"] = "mongodb://admin:admin123@ds159216.mlab.com:59216/vi
 
 db = pymongo.MongoClient(os.environ["MONGODB_URI"])
 
-colStats = db["stats"]
+collstats = db["stats"]
