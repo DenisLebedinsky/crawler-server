@@ -2,10 +2,7 @@
 from flask_cors import CORS
 from flask import request
 from flask import Flask
-from flask import jsonify
-from flask import abort
 import os
-import json
 import controller
 
 os.environ["PORT"] = "5000"
