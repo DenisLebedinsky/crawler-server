@@ -5,7 +5,6 @@ from flask import Flask
 import os
 import controller
 
-os.environ["PORT"] = "5000"
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
@@ -13,13 +12,13 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route('/api/videos', methods=['GET'])
 def videosList():
-		return controller.getList(request.args)
-   
+    return controller.getList(request.args)
 
 
 @app.route('/api/videos/<id>', methods=['GET'])
 def videoDetails(id):
     return controller.findById(id)
+
 
 @app.route('/api/videos/info/', methods=['GET'])
 def videoInfo():
@@ -41,4 +40,4 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ["PORT"], debug=True)
+    app.run(host=os.environ["HOST"], port=os.environ["PORT"], debug=False)
