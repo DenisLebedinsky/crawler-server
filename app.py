@@ -14,33 +14,19 @@ app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
+@app.route('/api/videos', methods=['GET'])
+def videosList():
+		return controller.getList(request.args)
+   
+
+
 @app.route('/api/videos/<id>', methods=['GET'])
 def videoDetails(id):
-    try:
-        data = controller.findById(id)
-        if not data:
-            raise Exception('not found')
-        res = {
-            "id": id,
-            "name": data['name'],
-            "likes": data['likes'],
-            "dislikes": data['dislikes'],
-            "views": data['views'],
-            "subscribers": data['subscribers'],
-            "url": data['url']
-        }
-    except:
-        res = {}
-    return jsonify(res)
-
+    return controller.findById(id)
 
 @app.route('/api/videos/info/', methods=['GET'])
 def videoInfo():
-    try:
-        res = controller.startCrawling(request.args.get('url'))
-    except NameError:
-        res = {}
-    return jsonify(res)
+    return controller.startCrawling(request.args.get('url'))
 
 
 @app.route('/api/videos', methods=['POST'])
