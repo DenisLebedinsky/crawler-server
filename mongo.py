@@ -1,8 +1,8 @@
-import pymongo
+from pymongo import MongoClient
 import os
 
-os.environ["MONGODB_URI"] = "mongodb://admin:admin123@ds159216.mlab.com:59216/videostats"
+os.environ["MONGODB_URI"] = "mongodb://admin:admin12@ds159216.mlab.com:59216/videostats"
 
-db = pymongo.MongoClient(os.environ["MONGODB_URI"])
-
-collstats = db["stats"]
+clientDB = MongoClient(os.environ["MONGODB_URI"])
+db = clientDB.get_default_database()
+statsColl = db.stats

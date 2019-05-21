@@ -7,3 +7,4 @@
 .env.production.local
 .idea
 .uploads
+.vscode
