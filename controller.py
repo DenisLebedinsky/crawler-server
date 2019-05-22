@@ -26,6 +26,7 @@ def getList(args):
                 "dislikes": item['dislikes'],
                 "views": item['views'],
                 "subscribers": item['subscribers'],
+                "published": item['published'],
                 "url": item['url']
             })
 
@@ -52,6 +53,7 @@ def findById(id):
             "dislikes": data['dislikes'],
             "views": data['views'],
             "subscribers": data['subscribers'],
+            "published": data['published'],
             "url": data['url']
         }
     except:

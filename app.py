@@ -1,7 +1,7 @@
 
 from flask_cors import CORS
 from flask import request
-from flask import Flask
+from flask import Flask, send_from_directory, send_file
 from flask import jsonify
 import os
 import controller

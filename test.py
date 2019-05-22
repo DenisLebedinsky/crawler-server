@@ -21,6 +21,7 @@ class ControllerTest(unittest.TestCase):
             "name": "Joel Spolsky: How I Seeded Stack Overflow | Founder Stories",
             "subscribers": "418 тыс.",
             "dislikes": "1",
+            "published": "11 мар. 2011 г.",
             "views": "4695",
             "url": "http://www.youtube.com/watch?v=-wtIMTCHWuI"
         }
