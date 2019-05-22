@@ -32,10 +32,16 @@ def videoInfo():
 
 
 @app.route('/api/videos', methods=['POST'])
-def videoDetailsPost():
+def videoSave():
     data = request.get_json()
     res = controller.save(data)
     return res, 201
+
+
+@app.route('/api/videos/delete/<id>', methods=['POST'])
+def videoRemove(id):
+    res = controller.remove(id)
+    return res, 200
 
 
 @app.errorhandler(500)

@@ -6,6 +6,7 @@ import spider
 from mongo import statsColl
 import uuid
 
+
 def getList(args):
     try:
         page = int(args.get('page'))
@@ -18,7 +19,7 @@ def getList(args):
 
         data = []
 
-        for item in statsColl.find({}, {"id":1,"name":1, "_id":0}).skip(skip).limit(per).sort("date"):
+        for item in statsColl.find({}, {"id": 1, "name": 1, "_id": 0}).skip(skip).limit(per).sort('date', -1):
             data.append({
                 "id": item['id'],
                 "name": item['name']
@@ -71,3 +72,11 @@ def startCrawling(url):
     except NameError:
         res = {}
     return res
+
+
+def remove(id):
+    try:
+        statsColl.delete_one({"id": id})
+        return "removed"
+    except NameError:
+        abort(500)
