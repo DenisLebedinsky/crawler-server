@@ -28,7 +28,7 @@ def scrapyYoutube(url):
         {'class': 'yt-subscription-button-subscriber-count-branded-horizontal'}).getText()
 
     published = soup.find(
-        'strong', {'class': 'watch-time-text'}).getText().split(':').pop().strip()
+        'strong', {'class': 'watch-time-text'}).getText()`#`.split(':').pop().strip()
 
     result = {'id': id,
               'url': url,
