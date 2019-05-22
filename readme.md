@@ -29,7 +29,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-	Youtobe crawler is app for CRUD data from Youtube.com to database
+	Youtobe crawler is an app for CRUD data from Youtube.com to database
  
 	Deployed on Heroku: https://heroku.com/
 	Client: https://github.com/DenisLebedinsky/crawler-client
@@ -48,12 +48,12 @@
 ## Getting Started
 
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow steps below.
 
 
 ### Prerequisites
 
-	You need intall
+	You need to install the following:
 
 ```sh
 pip 19.0.2
@@ -73,7 +73,7 @@ pip3 install -r requirements.txt
 ```
 3. Set env 
 ```sh
-VIRTUAL_ENV = <prodaction>|<development>|<test> 
+VIRTUAL_ENV = <production>|<development>|<test> 
 HOST = <your host>
 PORT = <your port>
 MONGODB_URI = <URI MongoDB>
@@ -84,7 +84,7 @@ MONGODB_URI = <URI MongoDB>
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Run client ([https://github.com/DenisLebedinsky/crawler-client]) and he will communicate with this app
+Run client ([https://github.com/DenisLebedinsky/crawler-client]) and it will communicate with this app
 
 
 
@@ -97,6 +97,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Denis Lebedinsky - [@your_email](denis.lebedinsky@intspirit.com) - denis.lebedinsky@intspirit.com
+Denis Lebedinsky - (denis.lebedinsky@intspirit.com) - denis.lebedinsky@intspirit.com
 
 Project Link: [https://github.com/DenisLebedinsky](https://github.com/DenisLebedinsky)
