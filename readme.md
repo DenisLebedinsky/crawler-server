@@ -4,7 +4,7 @@
 For install need Python 3.6.8
 
 ```
-pip install > requirements.txt
+pip3 install > requirements.txt
 ```
 
 ##Environments
@@ -28,7 +28,7 @@ nose2 -v
 
 
 ```
-python app.py runserver
+python3 app.py runserver
 ```
 
 ##Backend
