@@ -1,7 +1,7 @@
 
 ### Installing
 
-For install need Python 2.7
+For install need Python 3.6.8
 
 ```
 pip install > requirements.txt
