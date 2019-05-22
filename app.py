@@ -10,9 +10,11 @@ import controller
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
+
 @app.route('/', methods=['GET'])
 def root():
     return send_file('static/index.html')
+
 
 @app.route('/api/videos', methods=['GET'])
 def videosList():
@@ -44,4 +46,5 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ["HOST"], port=os.environ["PORT"], debug=False)
+    app.run(host=os.environ["HOST"],
+            port=os.environ["PORT"], debug=False)

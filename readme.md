@@ -32,12 +32,12 @@ python3 app.py runserver
 ```
 
 ##Backend
+
 https://github.com/DenisLebedinsky/crawler-server
 
 ##Frontend
 
 
 ## Authors
-
 	Name: Denis Lebedinsky
 	Email: denis.lebedinsky@intspirit.com

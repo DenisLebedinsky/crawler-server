@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-import uuid
 
 
 def scrapyYoutube(url):
@@ -9,8 +8,7 @@ def scrapyYoutube(url):
     r = requests.get(url)
     data = r.text.encode("utf-8")
     soup = BeautifulSoup(data, 'html.parser')
-    id = uuid.uuid4()
-
+    
     name = soup.find('span', {'id': 'eow-title'}).getText().strip()
 
     likes = soup.find('button', {'class': 'like-button-renderer-like-button'}
@@ -35,7 +33,7 @@ def scrapyYoutube(url):
     except Exception:
         published = publishedFull
 
-    result = {'id': id,
+    result = {
               'url': url,
               'name': name,
               'likes': likes,

@@ -4,7 +4,7 @@ from flask import jsonify
 from flask import abort
 import spider
 from mongo import statsColl
-
+import uuid
 
 def getList(args):
     try:
@@ -18,16 +18,10 @@ def getList(args):
 
         data = []
 
-        for item in statsColl.find().skip(skip).limit(per).sort("date"):
+        for item in statsColl.find({}, {"id":1,"name":1, "_id":0}).skip(skip).limit(per).sort("date"):
             data.append({
                 "id": item['id'],
-                "name": item['name'],
-                "likes": item['likes'],
-                "dislikes": item['dislikes'],
-                "views": item['views'],
-                "subscribers": item['subscribers'],
-                "published": item['published'],
-                "url": item['url']
+                "name": item['name']
             })
 
         total = statsColl.find().count()
@@ -63,6 +57,7 @@ def findById(id):
 
 def save(data):
     data["date"] = datetime.datetime.utcnow()
+    data["id"] = str(uuid.uuid4())
     try:
         statsColl.insert(data)
         return "saved"
