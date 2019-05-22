@@ -29,9 +29,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-	Youtobe crawler is an app for CRUD data from Youtube.com to database
+	Youtube crawler is an app for CRUD data from Youtube.com to database
  
-	Deployed on Heroku: https://heroku.com/
+	Deployed on Heroku: https://scrapy-youtube.herokuapp.com/
 	Client: https://github.com/DenisLebedinsky/crawler-client
 
 
