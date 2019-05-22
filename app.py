@@ -2,6 +2,7 @@
 from flask_cors import CORS
 from flask import request
 from flask import Flask
+from flask import jsonify
 import os
 import controller
 
@@ -12,17 +13,17 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route('/api/videos', methods=['GET'])
 def videosList():
-    return controller.getList(request.args)
+    return jsonify(controller.getList(request.args))
 
 
 @app.route('/api/videos/<id>', methods=['GET'])
 def videoDetails(id):
-    return controller.findById(id)
+    return jsonify(controller.findById(id))
 
 
 @app.route('/api/videos/info/', methods=['GET'])
 def videoInfo():
-    return controller.startCrawling(request.args.get('url'))
+    return jsonify(controller.startCrawling(request.args.get('url')))
 
 
 @app.route('/api/videos', methods=['POST'])

@@ -39,7 +39,7 @@ def getList(args):
         }
     except NameError:
         res = {}
-    return jsonify(res)
+    return res
 
 
 def findById(id):
@@ -56,7 +56,7 @@ def findById(id):
         }
     except:
         res = {}
-    return jsonify(res)
+    return res
 
 
 def save(data):
@@ -73,4 +73,4 @@ def startCrawling(url):
         res = spider.scrapyYoutube(url)
     except NameError:
         res = {}
-    return jsonify(res)
+    return res

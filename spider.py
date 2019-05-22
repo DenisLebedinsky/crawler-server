@@ -14,13 +14,13 @@ def scrapyYoutube(url):
 	name = soup.find('span', {'id': 'eow-title'}).getText().strip()
 	likes = soup.find('button', {'class': 'like-button-renderer-like-button'}
 										).find('span', {'class', 'yt-uix-button-content'}).getText()
-	unlikes = soup.find('button', {'class': 'like-button-renderer-dislike-button'}
+	dislikes = soup.find('button', {'class': 'like-button-renderer-dislike-button'}
 											).find('span', {'class', 'yt-uix-button-content'}).getText()
 	viewsText = soup.find('div', {'class': 'watch-view-count'}).getText()
 	views = int(''.join(x for x in viewsText if x.isdigit()))
 	subscribers = soup.find(
 			'span', {'class': 'yt-subscription-button-subscriber-count-branded-horizontal'}).getText()
-	result = {'id': id, 'name': name, 'likes': likes,
-				'unlikes': unlikes, 'views': views, 'subscribers': subscribers}
+	result = {'id': id, 'url':url, 'name': name, 'likes': likes,
+           'dislikes': dislikes, 'views': views, 'subscribers': subscribers}
 
 	return result
